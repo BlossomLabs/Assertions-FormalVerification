@@ -1,0 +1,2 @@
+formal/dependencies/dafnyevm/*.patch -text -whitespace
+formal/generators/**/*.patch -text -whitespace

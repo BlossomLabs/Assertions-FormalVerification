@@ -1,0 +1,28 @@
+{
+  "id": "o79-current-bytecode-size",
+  "status": "bytecode-acceptance-pending",
+  "selectedImplementationStatus": "new-static-bytecode-property",
+  "verificationEntries": [
+    "formal/bytecode/o79/Size.dfy"
+  ],
+  "entry": "formal/bytecode/o79/Size.dfy",
+  "implementations": [
+    "formal/bytecode/o79/Size.dfy"
+  ],
+  "resourcePolicy": {
+    "cores": 2,
+    "secondsPerObligation": 30,
+    "manualLemmaInduction": true,
+    "isolateAssertions": true
+  },
+  "layers": {
+    "mathematics": [
+      "formal/bytecode/o79/Size.dfy"
+    ]
+  },
+  "closureSha256": {
+    "formal/bytecode/o79/Size.dfy": "3df14d3923efc1632c5dad9d81d7ffc38dc44c6567703784520fa14db5ee2712"
+  },
+  "missingInputs": [],
+  "verificationScope": "Size of the complete current compiler-produced Operations deployed runtime, including metadata: 20,894 <= 24,576 bytes, with 3,682 bytes of headroom. Bound to solc 0.8.36, Cancun, optimizer enabled with 200 runs and the complete captured compiler request. Static artifact-size property; no execution or deployment-success claim."
+}

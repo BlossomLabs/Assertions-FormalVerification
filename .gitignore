@@ -1,0 +1,14 @@
+/evidence/
+/proof-tools/
+/workspace/
+__pycache__/
+*.pyc
+/CLAIMS.md
+/formal/bytecode/c50/Entry.dfy
+/formal/bytecode/o2/Entry.dfy
+/formal/bytecode/o12/Entry.dfy
+/formal/bytecode/o13/Blocks*.dfy
+/formal/bytecode/o13/Core.dfy
+/formal/bytecode/o13/Entry.dfy
+/formal/bytecode/o13/Helpers.dfy
+/formal/bytecode/o13/Stacks.dfy

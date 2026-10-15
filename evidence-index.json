@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "scope": "Imported immutable reviewed evidence; moving it is not fresh verification.",
+  "source": {
+    "C50": {
+      "review": "evidence/imported/project/formal/evidence/next-three-source-acceptance-20261015-o2-v1/review.json",
+      "sha256": "370c9710f6133221860399266b186da69b58b2a78bb3a93f1d1f0d54cbcbb1f9",
+      "status": "independently-reviewed-source-mappings",
+      "scope": "General source claims O9/E21/C50 under the ledger ABI/resource premises; no whole-graph or exact-runtime theorem"
+    },
+    "E21": {
+      "review": "evidence/imported/project/formal/evidence/next-three-source-acceptance-20261015-o2-v1/review.json",
+      "sha256": "370c9710f6133221860399266b186da69b58b2a78bb3a93f1d1f0d54cbcbb1f9",
+      "status": "independently-reviewed-source-mappings",
+      "scope": "General source claims O9/E21/C50 under the ledger ABI/resource premises; no whole-graph or exact-runtime theorem"
+    },
+    "O9": {
+      "review": "evidence/imported/project/formal/evidence/next-three-source-acceptance-20261015-o2-v1/review.json",
+      "sha256": "370c9710f6133221860399266b186da69b58b2a78bb3a93f1d1f0d54cbcbb1f9",
+      "status": "independently-reviewed-source-mappings",
+      "scope": "General source claims O9/E21/C50 under the ledger ABI/resource premises; no whole-graph or exact-runtime theorem"
+    }
+  },
+  "bytecode": {
+    "C50": {
+      "review": "evidence/imported/project/formal/evidence/c50-bytecode-acceptance-20261014-v4/review.json",
+      "sha256": "7d85abdc02ac212c6c95512f830675d09b7e231ba7383258e9adddd481b56d6d",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Whole public entry from PC 0 of the exact captured current runtime. Nonpayable value 0; valid outer decoder domain with decoded empty calls; Cancun; empty initial stack/memory; enough execution gas. Arbitrary start contents, outer offsets and calldata length within actual decoder/resource bounds. No compiler correctness assumption and no source-to-model bridge."
+    },
+    "O12": {
+      "review": "evidence/imported/project/formal/evidence/o12-bytecode-acceptance-20261014-v1/review.json",
+      "sha256": "e4655caf9ea900b9aade8319daa642536410043c3e04a51ecac812a2d2f0c773",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Whole public addMod/mulMod entries from PC 0 of the exact current Operations runtime. Arbitrary uint256 a, b and m; m=0 returns exact Panic(0x12) revert data; m>0 returns the unbounded sum/product modulo m. Cancun; call value zero; accepted three-word ABI decoder domain with arbitrary trailing calldata; initial empty stack/memory; at least 438 execution gas for addMod and 504 for mulMod. No compiler-correctness or source-to-model premise; no external backend call."
+    },
+    "O13": {
+      "review": "evidence/imported/project/formal/evidence/o13-bytecode-acceptance-20261015-v1/review.json",
+      "sha256": "6ad74269300cb5e32358e32b07be74999e8da9d5429ffe66a546d989c59df844",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Whole signed public addMod/mulMod entries from PC 0 of the exact current Operations runtime. Arbitrary int256 a, b and m including int256.min; m!=0 returns the signed remainder of the unbounded mathematical sum/product, whose sign follows that sum/product independently of m. Zero modulus reverts with exact Panic(0x12) data. Cancun; call value zero; accepted three-word ABI decoder domain with arbitrary trailing calldata; empty initial stack/memory; at least 1100 execution gas; termination within 400 interpreter steps. No compiler-correctness or source-to-model premise; no external backend call."
+    },
+    "O14": {
+      "review": "evidence/imported/project/formal/evidence/o14-bytecode-acceptance-20261015-v1/review.json",
+      "sha256": "798d143914e2fbf6380762adc69128e6177486ba5f5a1ca271db15ea071fa0ed",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Whole signed public addMod/mulMod entries from PC 0 of the exact current Operations runtime. Arbitrary int256 a, b and m including int256.min; m!=0 returns the signed remainder of the unbounded mathematical sum/product, whose sign follows that sum/product independently of m. Zero modulus reverts with exact Panic(0x12) data. Cancun; call value zero; accepted three-word ABI decoder domain with arbitrary trailing calldata; empty initial stack/memory; at least 1100 execution gas; termination within 400 interpreter steps. No compiler-correctness or source-to-model premise; no external backend call."
+    },
+    "O79": {
+      "review": "evidence/imported/project/formal/evidence/o79-bytecode-acceptance-20261015-v2/review.json",
+      "sha256": "ff9dc6a0940af138a70f39c9a2f413ddeb1428d37f03c53c3044cd38642f6c39",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Size of the complete current compiler-produced Operations deployed runtime, including metadata: 20,894 <= 24,576 bytes, with 3,682 bytes of headroom. Bound to solc 0.8.36, Cancun, optimizer enabled with 200 runs and the complete captured compiler request. Static artifact-size property; no execution or deployment-success claim."
+    },
+    "O2": {
+      "review": "evidence/imported/o2-20261015/formal/evidence/o2-bytecode-acceptance-20261015-v1/review.json",
+      "sha256": "e237dfc65fafd79c6adb5346bd3b54593974f3f1809083a3521af3670f76a4b6",
+      "status": "independently-reviewed-exact-bytecode",
+      "scope": "Whole public div/mod entries from PC 0 of the exact current Operations runtime. Arbitrary uint256 dividend and divisor; zero divisor reverts with exact Panic(0x12) data, nonzero divisor returns unsigned integer quotient/remainder. Cancun; call value zero; two-word ABI decoder domain (68 through 2^255+3 bytes) with arbitrary trailing calldata; initial empty stack/memory; at least 483 execution gas for div and 526 for mod. No compiler-correctness or source-to-model premise; no external backend call.",
+      "projectRoot": "evidence/imported/o2-20261015",
+      "supportingReceipts": [
+        {
+          "path": "formal/evidence/o2-native-review-20261015-v2.json",
+          "sha256": "b70ea74a099f092fe0bcaeb9c5e99391da0f91d9269110f8547b72c140b701de"
+        },
+        {
+          "path": "formal/evidence/o2-runtime-capture-20261015-v1/manifest.json",
+          "sha256": "6ec59f0a75c04f1d92c26a8631e166934e11c346c10f75e2d32474bab2a171dc"
+        },
+        {
+          "path": "formal/evidence/o2-concrete-20261015-v1/concrete.json",
+          "sha256": "6d31ccc289ed64a7f9e9d4bd76c53469914ef4f67190dbd267678698df71df90"
+        },
+        {
+          "path": "formal/evidence/o2-native-faults-20261015-v1/manifest.json",
+          "sha256": "a7a72270a521f433fc8a979df53c7f990be778dc814962630105adfc74d15c8c"
+        },
+        {
+          "path": "formal/evidence/o2-reader-faults-20261015-v1/manifest.json",
+          "sha256": "7f6a440974d98961f70b1527d745d1d9f378ea453b22d4d560a032432107623b"
+        },
+        {
+          "path": "formal/evidence/o2-final-audit-20261015-v1/manifest.json",
+          "sha256": "4f5beaab302786e8dccf922f9390a1aa3874ef797d86ec03a84646bf60e9adaf"
+        }
+      ],
+      "retainedAttempts": [
+        {
+          "manifest": "formal/evidence/o2-native-20261015-v1/manifest.json",
+          "sha256": "da56516bfdcc7a5d0b83fba6ea0cd1fe22cff82089b6b072c6f2248fd33f79ea",
+          "status": "failed",
+          "scope": "Incomplete: three shared C50 obligations timed out; retained without proof credit."
+        }
+      ]
+    }
+  },
+  "halmos": {
+    "manifest": "evidence/imported/halmos/docs/verification/halmos-mixed-fetched-narrow-get-accepted-20261014/manifest.json",
+    "manifestSha256": "27f2c9f9d920c8cf87ed1072072681bbb40cd0f2c529d66ff74cab64ec17f0b4",
+    "review": "evidence/imported/halmos/docs/verification/halmos-mixed-fetched-narrow-get-parent-finalization-review-20261014/review.json",
+    "reviewSha256": "4252cd6d5020381c2d0f5396abe1f8848c9c81bfe70586beb7b3b49ed9d3e8fb",
+    "properties": 382
+  },
+  "kontrol": {
+    "claim": "C69",
+    "tool": "Kontrol 1.0.255 / KEVM 1.0.678 (official native finite-gas Haskell engine)",
+    "runtimeSha256": "1a6a15fe275b0e8cc0e3ce02db213ccde722165142c2946fb5a94ddbbfc0eed1",
+    "premises": {
+      "guard": {
+        "entryPC": 6394,
+        "observedGasPC": 6423,
+        "finiteGas": true,
+        "useGas": true,
+        "autoAbstractGas": false,
+        "resourceBounds": "300 <= ENTRY <= BEFORE < 2^64",
+        "observedGas": {
+          "length0or36": "ENTRY-90",
+          "length4": "ENTRY-104"
+        },
+        "returnLengths": [
+          0,
+          4,
+          36
+        ],
+        "memoryBytes": 256,
+        "memoryWords": 8,
+        "freeMemoryPointer": 224,
+        "bytesHeader": 128,
+        "stack": "128:BEFORE:4292:.WordStack",
+        "frame": "NORMAL/CANCUN/checked stacks/static=true/depth0/value0/callGas0/initial success/empty output; other cells arbitrary preserved"
+      },
+      "markerCall": {
+        "entryPC": 4152,
+        "initialGas": 50000,
+        "core": 42334,
+        "target": 4369,
+        "targetInitiallyCold": true,
+        "coreInitiallyWarm": true,
+        "calldata": "empty",
+        "stack": "96:4369:4292:.WordStack",
+        "memoryWords": [
+          0,
+          0,
+          128,
+          0
+        ],
+        "memoryUsed": 4,
+        "callerAndOrigin": 1,
+        "static": true,
+        "callDepth": 0,
+        "accounts": "core holds exact runtime; target holds literal marker-revert code; nonce1/zero balances/storage; no other accounts",
+        "cheatFacilities": "prank/expectations/whitelists inactive; mock maps empty; no gas manipulation"
+      },
+      "oogCall": {
+        "entryPC": 4152,
+        "initialGas": 50000,
+        "core": 42334,
+        "target": 4369,
+        "targetInitiallyCold": true,
+        "coreInitiallyWarm": true,
+        "calldata": "empty",
+        "stack": "96:4369:4292:.WordStack",
+        "memoryWords": [
+          0,
+          0,
+          128,
+          0
+        ],
+        "memoryUsed": 4,
+        "callerAndOrigin": 1,
+        "static": true,
+        "callDepth": 0,
+        "accounts": "core holds exact runtime; target holds literal PUSH4 0xffffffff/MLOAD/STOP code; nonce1/zero balances/storage; no other accounts",
+        "cheatFacilities": "prank/expectations/whitelists inactive; mock maps empty; no gas manipulation",
+        "calleeCodeHex": "63ffffffff5100"
+      }
+    },
+    "openObligations": [
+      "general failed-call and finite-gas forwarding theorem",
+      "arbitrary returndata lengths and memory/frame geometries",
+      "other budgets/calldata/accounts and warm-target alternatives",
+      "public function and ABI/caller establishment",
+      "Operations/Collections/Expressions and nested wrapper propagation",
+      "deployment/state identity and totality",
+      "standalone numeric-to-byte/constructed-memory identities of failed formulations"
+    ],
+    "runs": [
+      {
+        "manifest": "../kontrol-proofs/gas-pilot-draft/generated/guard-manifest-20261013T203529.223239Z.json",
+        "manifestSha256": "fb63255bd4d9c3183cb62d89d29497c4420b619b06675abc599db7762cdc15e6",
+        "acceptance": "../kontrol-proofs/gas-pilot-draft/generated/guard-parent-acceptance-20261013T204335.492960Z.json",
+        "acceptanceSha256": "b15187f8cd6254409352e6a4ba7b9bc6da9f8414e2bcc3cbc461f20d38a8bb9e",
+        "proofIds": [
+          "GAS-PILOT-GUARD36.marker-plus-payload-ordinary-returns",
+          "GAS-PILOT-GUARD4.four-byte-marker-revert",
+          "GAS-PILOT-LITERAL4.four-byte-ordinary-returns",
+          "GAS-PILOT-LITERAL4.four-byte-threshold-revert",
+          "GAS-PILOT-NATURALPOSTS.four-byte-threshold-revert-natural-frame",
+          "GAS-PILOT-NATURALPOSTS.marker-plus-payload-threshold-revert-natural-frame",
+          "GAS-PILOT-THRESHOLD0CORRECT.empty-ret-threshold-revert"
+        ]
+      },
+      {
+        "manifest": "../kontrol-proofs/gas-pilot-draft/generated/call-manifest-20261013T205815.475880Z.json",
+        "manifestSha256": "814ee95cfc85ada858089b12a614366c1f650690b8a803a3d37a2741e025fb37",
+        "acceptance": "../kontrol-proofs/gas-pilot-draft/generated/call-parent-acceptance-20261013T210413.147054Z.json",
+        "acceptanceSha256": "9a5aacd57739b5385bfe0cd999f4576956476a3b5cd10b6827ccbf36162c507e",
+        "proofIds": [
+          "GAS-PILOT-CALLMARKER2.cold-staticcall-reserved-marker"
+        ]
+      },
+      {
+        "manifest": "../kontrol-proofs/gas-pilot-draft/generated/oog-manifest-20261013T212000.704751Z.json",
+        "manifestSha256": "30d3e07e11047f1723decdc35507f951614d43d8efe73a5f2f88c2ff3aed0e9a",
+        "acceptance": "../kontrol-proofs/gas-pilot-draft/generated/oog-parent-acceptance-20261013T212430.942198Z.json",
+        "acceptanceSha256": "e3c30baa39b3d8cc26f3eaeb119131304d31631d81192567a281c6b8c5f3fb4b",
+        "proofIds": [
+          "GAS-PILOT-CALLOOG2.cold-staticcall-memory-exhaustion"
+        ]
+      }
+    ],
+    "sourceSha256": {
+      "tools/audit.py": "3c0769cc4f51a074509996c5d8564b18aaffb0f63a23a2a3266c542c57d2bd15",
+      "tools/audit_call.py": "29d028df84d9f64b983035bace08ca1a5dd3bf7be147c34a8f46219cdc8a32b3",
+      "tools/audit_call_v2.py": "17105c9903430c957423b44bc957bdeb69046ec6750b54b6427a5010405d665b",
+      "tools/audit_guard.py": "31fc125da57834716861d868844614e0ee39aee034a1c82ec4802bce1b072bd7",
+      "tools/audit_oog.py": "627785162178a3f5cea487e2a009d4b4189d20af8a05372d4f2d0b6914520090",
+      "tools/audit_oog_v2.py": "42292f3a71c501e5eee310423655074fd6b6d87f5a0b9255d4ebf73237d42d17",
+      "tools/audit_oog_v3.py": "52bc893c7377e3e80482431cf58ce4db60ecfe057118ebdff474ad2714f4d28c",
+      "tools/bind_guard.py": "942a711cc89273c30f1d3f76bc6631680a40d1841c44e95af71deded97841d06",
+      "tools/call_claim.py": "584ee03dd55b3bffaf58e6f1e62fae257fad9c3e415b7ea2433265ae701ca22f",
+      "tools/call_corrected.py": "cc16e9ea778daf08a13db16c3d505dd295fa796648feb0104735eb46ebac9576",
+      "tools/claims.py": "45138d4df203d951ac0c53c04736e3108b34ec99b663b410df5faf4642acc5d8",
+      "tools/guard_cases.py": "8c4946aa51dd82bd3798d25e82823132f5445187ef70b66cd8d0012b236fd59e",
+      "tools/literal_cases.py": "fd23aa71237929d20cc07f743cd6e62c492d244b56e867cb01faeb9645ccc5f2",
+      "tools/observe_oog.py": "717b32ad20b81123ddc7097c21f0e7cb0a3d81e5dda554a8cc58916024674ce6",
+      "tools/oog_claim.py": "24f37a1ee36449a72f07897fe6b9a5bebaaf6a3edf3e8db3a007adf647d537bc",
+      "tools/oog_corrected.py": "cb1a7fa72c2bdcb1d5dca69aff2a8f86cbe57ae8958df5b439b9e8cc235da7bc",
+      "tools/preserve.py": "d8354d7c6725daa1d1c86e3e0cb49b3d0737f0a435fe974186a07da67bad5c9e",
+      "tools/prove.py": "524ef4e5da95ba8279f9ec54ac719504a6f0a03f019ceda33e51b9e8975294ec",
+      "tools/run.py": "dc51b75b239c14d8e205f587c0eb81da863b7c48945cf16689cd775050ebb144"
+    }
+  }
+}

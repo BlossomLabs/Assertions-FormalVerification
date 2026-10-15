@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "id": "c50-current-bytecode",
+      "canonicalDescriptor": "formal/packages/c50-current-bytecode/canonical.json"
+    },
+    {
+      "id": "o2-current-bytecode",
+      "canonicalDescriptor": "formal/packages/o2-current-bytecode/canonical.json"
+    },
+    {
+      "id": "o12-current-bytecode",
+      "canonicalDescriptor": "formal/packages/o12-current-bytecode/canonical.json"
+    },
+    {
+      "id": "o13-current-bytecode",
+      "canonicalDescriptor": "formal/packages/o13-current-bytecode/canonical.json"
+    },
+    {
+      "id": "o79-current-bytecode-size",
+      "canonicalDescriptor": "formal/packages/o79-current-bytecode-size/canonical.json"
+    },
+    {
+      "id": "next-three-current-source-guards",
+      "canonicalDescriptor": "formal/packages/next-three-current-source-guards/canonical.json"
+    }
+  ]
+}

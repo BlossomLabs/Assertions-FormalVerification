@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "claim": "O79",
+  "recordedClaim": "Operations' runtime bytecode fits EIP-170 (24,576 bytes)",
+  "statementSha256": "14147bb86896b12238271207cfd75a24486843ef5c6387b3cea3528112477a8b",
+  "package": "o79-current-bytecode-size",
+  "runtimeBinding": "formal/bytecode/o13/runtime-binding.json",
+  "runtimeBindingSha256": "34c70f5e95acfcc91b545b8419890faf34cefedcda1df533f1cf2de2f3069507",
+  "runtimeSha256": "5d2c55bb81235c0e0fd9faecb83ffe6f516f379bbd3a9f1816360d7ecad3003a",
+  "runtimeLength": 20894,
+  "eip170Limit": 24576,
+  "headroom": 3682,
+  "proofSource": "formal/bytecode/o79/Size.dfy",
+  "proofSourceSha256": "3df14d3923efc1632c5dad9d81d7ffc38dc44c6567703784520fa14db5ee2712",
+  "declarations": {
+    "Eip170Limit": {
+      "interfaceSha256": "300c681ace565b1faa709de6c125880f6b0dbb66dc7ff8a34f5ed1ebf03c0505",
+      "fullSha256": "d7a5ae72b57eb4b9362a3041732aa04751b23f1be51861a9d2b40b4d028984c4"
+    },
+    "RuntimeLength": {
+      "interfaceSha256": "184fc09b8923e766b8097f25dfa87a106f1a9692303c372ae193eb7dc5510778",
+      "fullSha256": "c35f2ee0cecbad7b0459a5ab52c02feae85e1798eb06be91eb87d58a11b02e7c"
+    },
+    "FitsEip170": {
+      "interfaceSha256": "e65cf317445a0a91f1223f7d643cbb679cb8fa6002922f1d1215831eb17ee37e",
+      "fullSha256": "e5b77c5e6f31da5b0a4f718c3bcac4688b327313076b4e752434a7d1d107ddb5"
+    }
+  },
+  "scope": "Size of the complete current compiler-produced Operations deployed runtime, including metadata: 20,894 <= 24,576 bytes, with 3,682 bytes of headroom. Bound to solc 0.8.36, Cancun, optimizer enabled with 200 runs and the complete captured compiler request. Static artifact-size property; no execution or deployment-success claim."
+}

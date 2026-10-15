@@ -1,0 +1,30 @@
+--- a/formal/bytecode/o13/Helpers.dfy
++++ b/formal/bytecode/o13/Helpers.dfy
+@@ -21,6 +21,18 @@
+ 
+   import L = O13Stacks
+   import opened Common = O13Core
++  lemma NegateTop(st:ExecutingState,w:u256,ret:u256,tail:seq<u256>)
++    requires st.evm.fork==EvmFork.CANCUN
++    requires st.PC()<|st.evm.code.contents| && st.evm.code.contents[st.PC()]==3
++    requires st.Gas()>=3 && |tail|<=1021
++    requires st.evm.stack.contents==L.RestoreNeg23(w,ret,tail)
++    ensures Step(st)==EXECUTING(st.evm.(pc:=st.PC()+1,gas:=st.Gas()-3,stack:=Stack.Make(L.RestoreNeg24(w,ret,tail))))
++  {
++    reveal Old.Safe(); reveal Old.Supported(); reveal Old.Cost(); reveal Old.Arity(); reveal Old.Adds();
++    Old.Pure(st,3);
++    L.NextRestoreNeg23(w,ret,tail);
++    reveal Step(); reveal Old.Next();
++  }
+   lemma Power255() ensures MathUtils.Pow(2,255)==TWO_255 {
+     assert MathUtils.Pow(2,1)==2;
+     assert MathUtils.Pow(2,3)==8;
+@@ -1072,7 +1084,7 @@
+     Compose(st,22,1);
+     assert next==Run(st,23);
+     s:=next;
+-    PureStep(s,3);
++    NegateTop(s,w,ret,tail);
+     next:=Step(s);
+     L.NextRestoreNeg23(w,ret,tail);
+     assert next==EXECUTING(st.evm.(pc:=9104,gas:=st.Gas()-79,stack:=Stack.Make(L.RestoreNeg24(w,ret,tail))));

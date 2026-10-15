@@ -1,0 +1,43 @@
+{
+  "id": "next-three-current-source-guards",
+  "status": "current-source-acceptance-pending",
+  "selectedImplementationStatus": "new-canonical-current-source-guards",
+  "entry": "formal/source/assertions/chain-entry/Claims.dfy",
+  "verificationEntries": [
+    "formal/source/assertions/chain-entry/Claims.dfy",
+    "formal/source/expressions/address-guard/Claims.dfy",
+    "formal/source/operations/zero-denominator/Claims.dfy"
+  ],
+  "implementations": [
+    "formal/bridges/next-three/Models.dfy",
+    "formal/source/assertions/chain-entry/Claims.dfy",
+    "formal/source/expressions/address-guard/Claims.dfy",
+    "formal/source/operations/zero-denominator/Claims.dfy"
+  ],
+  "resourcePolicy": {
+    "cores": 2,
+    "secondsPerObligation": 30,
+    "manualLemmaInduction": true,
+    "isolateAssertions": true
+  },
+  "layers": {
+    "mathematics": [
+      "formal/bridges/next-three/Models.dfy"
+    ],
+    "execution": [],
+    "correspondence": [
+      "formal/source/assertions/chain-entry/Claims.dfy",
+      "formal/source/expressions/address-guard/Claims.dfy",
+      "formal/source/operations/zero-denominator/Claims.dfy"
+    ],
+    "foundations": []
+  },
+  "closureSha256": {
+    "formal/bridges/next-three/Models.dfy": "0b4734b8bcdb26747d73b62f771b6bbeb57d6adffbc0639b6af6fdac2d342d56",
+    "formal/source/assertions/chain-entry/Claims.dfy": "98a5f3345e662dc20bbb68b52dbc6db2f25143b0f9a1d21cbbd157029ce2d749",
+    "formal/source/expressions/address-guard/Claims.dfy": "14f29b306774313a008a9ab86daf705f1fd5265727bb10bf9b7760e196b2533f",
+    "formal/source/operations/zero-denominator/Claims.dfy": "197bb85ab8b1d526cba1e3d42cf8adb2677d2e4823970d2471d171823e4bd139"
+  },
+  "missingInputs": [],
+  "verificationScope": "Current O9 zero-denominator prefixes, E21 reached target guards for both Call kinds and every word/index, and C50 empty-call entry independent of every start operand. Source correspondence and claim implication require their separate gates; no exact-runtime credit."
+}

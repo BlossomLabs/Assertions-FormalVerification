@@ -1,0 +1,101 @@
+name: Verification
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      assertions_revision:
+        description: "Optional exact candidate Assertions commit; historical acceptance does not transfer"
+        required: false
+        type: string
+      native_package:
+        description: "Optional native package to reproduce after the concrete/Halmos gate"
+        required: false
+        type: choice
+        options: [none, c50-current-bytecode, o2-current-bytecode, o12-current-bytecode, o13-current-bytecode, o79-current-bytecode-size, next-three-current-source-guards]
+        default: none
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "26.10.0"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.28.2"
+      - run: python3 formal/tools/bootstrap_evm.py --fetch
+      - run: python3 tools/prepare.py --source https://github.com/blossomlabs/assertions.git --output workspace
+      - run: python3 tools/check_project.py --source workspace
+      - run: pnpm install --frozen-lockfile --ignore-scripts
+        working-directory: workspace
+      - run: python3 formal/tools/generate.py --project workspace
+      - run: python3 formal/tools/check.py
+      - run: python3 tools/render.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: expanded-proofs
+          path: |
+            CLAIMS.md
+            claims.json
+            project.json
+            formal/bytecode/
+            formal/source/
+            formal/bridges/
+  verify:
+    needs: metadata
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: expanded-proofs
+          path: .
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "26.10.0"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: "10.28.2"
+      - uses: foundry-rs/foundry-toolchain@v1
+        with:
+          version: v1.5.1
+      - run: python3 formal/tools/bootstrap_evm.py --fetch
+      - run: python3 formal/tools/check.py && python3 tools/render.py --check
+      - name: Prepare source workspace
+        env:
+          PROOF_CANDIDATE: ${{ inputs.assertions_revision }}
+        run: |
+          if [ -n "$PROOF_CANDIDATE" ]; then
+            python3 tools/prepare.py --source https://github.com/blossomlabs/assertions.git --output workspace --candidate "$PROOF_CANDIDATE"
+          else
+            python3 tools/prepare.py --source https://github.com/blossomlabs/assertions.git --output workspace
+          fi
+      - run: pip install halmos==0.3.3
+      - run: pnpm install --frozen-lockfile
+        working-directory: workspace
+      - run: pnpm test && forge test
+        working-directory: workspace
+      - run: python3 scripts/verify-claims.py --output docs/verification/ci-fresh
+        working-directory: workspace
+      - name: Optional native reproduction
+        if: inputs.native_package != 'none'
+        env:
+          PROOF_PACKAGE: ${{ inputs.native_package }}
+        run: python3 formal/tools/verify.py "$PROOF_PACKAGE" --output evidence/ci-native --run
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-evidence
+          path: |
+            workspace/docs/verification/ci-fresh/
+            evidence/ci-native/

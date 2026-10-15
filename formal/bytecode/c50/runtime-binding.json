@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "claim": "C50",
+  "recordedClaim": "`chain` with empty `calls` reverts `EmptyCallChain`",
+  "statementSha256": "441e26625f25e72f39179af80df0a89bea3a73d7cf2832a3f81df59f70530ea1",
+  "package": "c50-current-bytecode",
+  "runtimeSha256": "1a6a15fe275b0e8cc0e3ce02db213ccde722165142c2946fb5a94ddbbfc0eed1",
+  "runtimeLength": 19674,
+  "selector": "a5c16924",
+  "compilerSha256": "c8d35afdddc3cd2743ee88b8f25e0fecd16e2bdd5f2120f37e52cd9cc45ae0e6",
+  "sources": {
+    "npm/@openzeppelin/contracts@5.6.1/utils/math/Math.sol": "bdfdbe133991c0c78042957ff5cd97167926fcaf6d15664f3835a076cb066457",
+    "npm/@openzeppelin/contracts@5.6.1/utils/math/SafeCast.sol": "5779bc848bde39f1ad7bc02b4f708a0040888e0083b1a33f119cd94639350134",
+    "npm/@openzeppelin/contracts@5.6.1/utils/Panic.sol": "270fc8401c1a13fae6a7a4a2dd6e381b95d658896701e51f0d3e2688acab3dec",
+    "project/contracts/Assertions.sol": "93327139e5e91d3aaf8eb468d5a259685193da9e5406d64c8d1c342ad647149b",
+    "project/contracts/Collections.sol": "dfce1d7a1981cd9547e0c3b0f8a6918e4abe155f736344e2b059b46ad940debb",
+    "project/contracts/Expressions.sol": "f6c93d36c402f81a9a3ae029b40c60d182922fb1b9864b251b4832680c1fb523",
+    "project/contracts/lib/AbiCodec.sol": "47f1b165d26d17a619e676002c285d6053f2a998f819b3af2ca446cd9a5be814",
+    "project/contracts/lib/ERC8211.sol": "cc6cfb97bb1ca7e76b7c64b0c4ceff6c4b1d7c4d74ff453a30ccbecf98657705",
+    "project/contracts/Operations.sol": "855da3a9a140c204be1fcd947434d403f8d8a7a7f81570fe46a68cb7284e2728",
+    "project/contracts/tests/BiconomyERC8211Runtime.sol": "501bcda0d887350e6226998200b1e5dc392f72bfe50b1a3ba6eaa8a1df18035d",
+    "project/contracts/tests/ERC8211ReferenceHarness.sol": "ff261e9b0d6cb804204293e0298b752de23fe821ab82c322ad2b16fbe05c5d9c",
+    "project/contracts/tests/Mocks.sol": "d88a1cbd9af7f6ee90703dda2f9c8792144c45b5c6673fb73addf71fa7a64f9b"
+  },
+  "settings": {
+    "evmVersion": "cancun",
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "ast"
+        ],
+        "*": [
+          "abi",
+          "evm.bytecode.linkReferences",
+          "evm.bytecode.object",
+          "evm.bytecode.opcodes",
+          "evm.bytecode.sourceMap",
+          "evm.deployedBytecode.immutableReferences",
+          "evm.deployedBytecode.linkReferences",
+          "evm.deployedBytecode.object",
+          "evm.deployedBytecode.opcodes",
+          "evm.deployedBytecode.sourceMap",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "remappings": [
+      "project/:@openzeppelin/contracts/=npm/@openzeppelin/contracts@5.6.1/"
+    ]
+  },
+  "proofSource": "formal/bytecode/c50/Entry.dfy",
+  "proofSourceSha256": "54d8b585b733d30a59fb022c96c4331db03bf2c5bf9537ec57843944d9b37093",
+  "declarations": {
+    "A": {
+      "interfaceSha256": "2055db7e932960174b6a7888b84ad810526ad69ae0de3d9111e869c4daa4341a",
+      "fullSha256": "7661a7685a57559925f9961402ebb531884758bf55a6c418ce5cf702be866203"
+    },
+    "B": {
+      "interfaceSha256": "cc741485599a0db076883b0d2f0cdf868660bb85bf8433ac376ec8e4a30eb608",
+      "fullSha256": "abd5514637fb4d9a854bdbf67e862c20640dd1cdfc2285c23250a325f36f9dfe"
+    },
+    "L": {
+      "interfaceSha256": "b5d42c4e55949c1fc040e4bf796f6c7c75022e89fce63ef3e67b497effe61dff",
+      "fullSha256": "983068ef4160043d7c9b1b05c880d24777f361434b3f61d0e77c3d74b3a0792b"
+    },
+    "H": {
+      "interfaceSha256": "5e2af99eb0631f6468e4d3edea6b1208074f22867a6881306685cec4d539b2f5",
+      "fullSha256": "d9d93b92b08c1b3b7c181b5501f51992950e1badc17e94dc08038de8043a2f0e"
+    },
+    "ValidEmptyCall": {
+      "interfaceSha256": "9c2a2edbbba1cab1b65ae0df788c9833dba542ec829375d5ba903595685a6b4d",
+      "fullSha256": "8b0e7ba9c2239c13b318788cc0319ba7430c43fcfebbf0ce8b1bb02caea7afe4"
+    },
+    "Runtime": {
+      "interfaceSha256": "55201821ba9fb4470d796bc32eb72931247040319c9bd8f972611ee69141d2cf",
+      "fullSha256": "9f8a7138c2ebf98c5ee9879d8981f03a84f0780d325c7a76d95757314297edda"
+    },
+    "Ready": {
+      "interfaceSha256": "dcc3c8665956549cef96a6d75152be4c518095d722668b435548413783ec4512",
+      "fullSha256": "9ce9cf030e631f28666a48a1567cf490ec720c0297dde558006a872475f87b6e"
+    },
+    "Step": {
+      "interfaceSha256": "578830fbb5d01838f41a6a93bf59626c14eccfb336cc44bfdd670565709fa859",
+      "fullSha256": "8dfed69e80572d7f67eaa7da2cf8c8c997138c570856b8190678b032fffbfa92"
+    },
+    "Run": {
+      "interfaceSha256": "52ce4d06141d6982d9fc9e937499aa2ccf5702a4000417a41b0570f74415b848",
+      "fullSha256": "a4566382ee339db9925cd7453f05c1a3f856ab9add6cc76969f7f79fdff40bd4"
+    },
+    "RunMatchesKernel": {
+      "interfaceSha256": "59b2c60fe62b1364be306deea4e4a8dde0efed0d46517af5a48a841b129b2ef3",
+      "fullSha256": "c07b3e3ca90f150b1cef7251b5ea2c35b4c7d4a9a6f7b3445a52018475989bf7"
+    },
+    "FullC50": {
+      "interfaceSha256": "649d86e8c3c0fae8223175a3cb96a361378079e7d90850de67f25f31a1578b8f",
+      "fullSha256": "d091a7b6234f4f2cfe8e3512327ce2684a5945f9a973f32d64543f6b507b4053"
+    }
+  },
+  "executionSteps": 204,
+  "executionGas": 693,
+  "expectedRevert": "3955afaa",
+  "scope": "Whole public entry from PC 0 of the exact captured current runtime. Nonpayable value 0; valid outer decoder domain with decoded empty calls; Cancun; empty initial stack/memory; enough execution gas. Arbitrary start contents, outer offsets and calldata length within actual decoder/resource bounds. No compiler correctness assumption and no source-to-model bridge.",
+  "acceptance": "pending"
+}
