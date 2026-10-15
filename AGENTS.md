@@ -1,6 +1,8 @@
 # Verification repository
 
-Claims live in claims.json; render the ignored CLAIMS.md with tools/render.py. project.json
+Claims live in claims.json; the root CLAIMS.md is a tracked, generated index.
+Run tools/render.py after editing claims.json; CI regenerates it on every run
+and commits changes on branch pushes. Never edit CLAIMS.md by hand. project.json
 binds the production revision and complete accepted Halmos source/configuration
 snapshot, including explicit package and contract versions. Run
 tools/check_project.py to identify that target; --source compares local contracts

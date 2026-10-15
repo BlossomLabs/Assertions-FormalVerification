@@ -4,9 +4,13 @@ This repository owns the public claims, Halmos harnesses, claim-specific Dafny
 proofs and verification tooling for Assertions. [project.json](project.json)
 identifies the validated contract versions, Assertions revision and every
 source/configuration input that ran.
+[CLAIMS.md](CLAIMS.md) is the readable claim index at the repository root.
 [claims.json](claims.json) retains the precise wording, classification, scope
-and named theorems. `tools/render.py` builds the readable `CLAIMS.md` locally
-and in CI, with links to the regenerated theorem sources.
+and named theorems. `python3 tools/render.py` regenerates the tracked index
+without requiring installed proof tools. CI regenerates it on every run and
+commits updates on branch pushes, including every change to `claims.json`.
+Tracked theorems link to their source; generated theorems link to their declarations
+and accepted hashes, with full sources in the CI artifacts.
 
 The validated target is Assertions package **2.0.0**, with Assertions,
 Operations, Collections and Expressions each at contract version **2.0**, from
@@ -71,7 +75,7 @@ package's core count and per-obligation time limit, verifies the entire import
 closure, audits for admissions and checks formatting. Fresh native results
 remain separate from claim implication and exact-runtime acceptance.
 
-The 33 expanded bytecode proof files and `CLAIMS.md` are ignored outputs.
+The 33 expanded bytecode proof files are ignored outputs.
 [formal/generators](formal/generators/README.md) contains the frozen generators,
 small concrete input recipes and final proof repair. Generation recompiles the
 pinned Solidity sources, replays the discovery traces and checks every expanded

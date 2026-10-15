@@ -3,7 +3,6 @@
 /workspace/
 __pycache__/
 *.pyc
-/CLAIMS.md
 /formal/bytecode/c50/Entry.dfy
 /formal/bytecode/o2/Entry.dfy
 /formal/bytecode/o12/Entry.dfy

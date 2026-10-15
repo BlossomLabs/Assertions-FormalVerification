@@ -10,8 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def render():
     project = check(verbose=False)
-    catalog = json.loads((ROOT / 'claims.json').read_text())
-    lines = ['# Assertions claims', '',
+    source = (ROOT / 'claims.json').read_text()
+    catalog = json.loads(source)
+    generated = json.loads((ROOT / 'formal/generators/outputs.json').read_text())
+    lines = ['<!-- Generated from claims.json by tools/render.py; do not edit manually. -->', '',
+             '# Assertions claims', '',
              f'Statements and classifications validate Assertions package {project["packageVersion"]} at '
              f'[{project["revision"]}]({project["repository"].removesuffix(".git")}/tree/{project["revision"]}). '
              'Individual contract versions and source hashes are recorded in [project.json](project.json). '
@@ -19,8 +22,10 @@ def render():
              'Full labels retain their stated ABI, resource and execution premises.', '',
              'The retained Halmos baseline passed 382 properties. Source, native, runtime and implication evidence '
              'remain separate; see [the receipt index](evidence-index.json) and [reproduction instructions](README.md).', '',
+             'Generated theorem links open their declarations and accepted hashes in claims.json. '
+             'Full expanded sources are published in the '
+             '[CI artifacts](https://github.com/BlossomLabs/Assertions-FormalVerification/actions/workflows/verification.yml).', '',
              '| ID | Claim | Verification | Scope and named theorems |', '|---|---|---|---|']
-    source = (ROOT / 'claims.json').read_text()
     for identifier, claim in catalog['claims'].items():
         match = re.search(r'^    "' + re.escape(identifier) + r'": \{', source, re.M)
         line = source.count('\n', 0, match.start()) + 1
@@ -29,6 +34,10 @@ def render():
             for proof in claim.get(kind, []):
                 for theorem in proof['theorems']:
                     name, symbol = theorem['declaration'].rsplit('::', 1)
+                    if name in generated:
+                        location = source.count('\n', 0, source.index(json.dumps(theorem['declaration']))) + 1
+                        links.append('[' + symbol + '](claims.json#L' + str(location) + ')')
+                        continue
                     text = (ROOT / name).read_text()
                     found = re.search(r'\b(?:lemma|method)\s+(?:\{:[^}]*\}\s*)*' + re.escape(symbol) + r'\b', text)
                     assert found, theorem['declaration']
